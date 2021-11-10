@@ -1,29 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
+{% block title %}salut c'est la page Contact ! {% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ name }}, ici c'est {{ city }}! ✅</h1>
-
-    This friendly message is coming from:
+    <h1>liste contact</h1>
     <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/blog/src/Controller/ContactController.php'|file_link(0) }}">src/Controller/ContactController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/blog/templates/contact/index.html.twig'|file_link(0) }}">templates/contact/index.html.twig</a></code></li>
+        <li>contact 1</li>
+        <li>contact 2</li>
+        <li>contact 3</li>
+        <li>contact 4</li>
     </ul>
-</div>
-    <div>
-        <ul>
-            <li><a href="/">Accueil</a></li>
-            <li><a href="{{ path('contact') }}">contact</a></li>
-            <li><a href="{{ path('contact', {city: 'montpellier'}) }}">Contacter MTP</a></li>
-            <li><a href="{{ path('contact', {name: "adri" })}}">Contacter de ma part</a></li>
-            <li><a href="{{  path('contact') }}">Contact ta mer</a></li>
-        </ul>
-    </div>
 {% endblock %}

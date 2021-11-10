@@ -13,7 +13,30 @@
             {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    {% block head %}
+
+    {% endblock %}
+
+    {% block header %}
+        <div>
+            <ul>
+                <li><a href="{{ path('accueil') }}">accueil</a></li>
+                <li><a href="{{ path('contact', {city: 'montpellier'}) }}">Contacter MTP</a></li>
+                <li><a href="{{ path('contact', {name: "adri" })}}">Contacter de ma part</a></li>
+                <li><a href="{{  path('blog') }}">Blog</a></li>
+                <li><a href="{{  path('article') }}">articles</a></li>
+            </ul>
+        </div>
+    {% endblock %}
+
+    {% block body %}
+
+    {% endblock %}
+
+    {% block footer %}
+
+        <h1>C'est le footer de la page </h1>
+        </div>
+    {% endblock %}
+
 </html>

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ClientController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ contact.name }}! ✅</h1>
+
+
+    <h2> Monsieur ou Madame {{ contact.firstName}}  {{ contact.name}} veut vous contacter </h2>
+    <br>
+    <p> Son age est {{ contact.age}}  </p>
+    <br>
+
+    {% if contact.newsletter == true %}
+        <p> La newsletter a été acceptée </p>
+    {% endif %}
+    {% if contact.newsletter == false %}
+        <p> La newsletter a été refusée </p>
+    {% endif %}
+
+
+
+
+
+
+</div>
+{% endblock %}

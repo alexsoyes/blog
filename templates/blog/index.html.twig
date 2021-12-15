@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes demandes de contacts!{% endblock %}
+
+{% block body %}
+
+
+<div class="form_raw">
+    <h1>Hello {{ contact.name }}! ✅</h1>
+    <h2> Mr/Mme {{ contact.firstname}} {{ contact.name}} souhaite vous contacter.</h2>
+    <br>
+    {% if contact.news == true %}
+        <p> La newsletter a été acceptée </p>
+    {% endif %}
+    {% if contact.news == false %}
+        <p> La newsletter a été refusée </p>
+    {% endif %}
+    <br>
+        <p> Voici son message : {{ contact.message}} </p>
+    {% endif %}
+
+<div class="example-wrapper">
+
+// si moins d'1 demandes de contacts
+
+    {% if total > 1 %}
+    <h1>Vous avez  {{ total }} demandes de contact ! 🥳</h1>
+    {% endif %}
+
+// si + d'1 demandes de contacts
+
+    {% if total == 1 %}
+        <h1>Vous avez  {{ total }} demande de contact ! 👽</h1>
+    {% endif %}
+
+// si pas de demandes de contacts
+
+    {% if total == 0 %}
+        Vous n'avez aucune demandes de contact.
+    {% endif %}
+
+    {% if contacts is not empty %}
+        {% for contact in contacts %}
+            <li><a href="{{ path('client', {ContactName: contact.id}) }}">Vous avez une demande de contact de {{ contact.name}}. </a></li>
+        {% endfor %}
+
+    {% endif %}
+</div>
+
+
+{% endblock %}

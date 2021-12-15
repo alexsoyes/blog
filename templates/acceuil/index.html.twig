@@ -1,5 +1,4 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Hello AcceuilController!{% endblock %}
 
 {% block body %}
@@ -10,11 +9,12 @@
 
 <div class="example-wrapper home">
     <h1>Hello {{ controller_name }}! ✅</h1>
-
+    <img class="logo" src="{{asset('images/logo.jpg')}}" alt="logo Symfony"/> <br>
     This friendly message is coming from:
     <ul>
         <li>Your controller at <code><a href="{{ 'D:/symfony-app/TP/blog/src/Controller/AcceuilController.php'|file_link(0) }}">src/Controller/AcceuilController.php</a></code></li>
         <li>Your template at <code><a href="{{ 'D:/symfony-app/TP/blog/templates/acceuil/index.html.twig'|file_link(0) }}">templates/acceuil/index.html.twig</a></code></li>
     </ul>
 </div>
+<script src="{{asset('script/home.js')}}" ></script>
 {% endblock %}

@@ -25,11 +25,40 @@ class AppFixtures extends Fixture
                 'contenue'=>'Super ça marche 2'
             ],
         ];
+        $Contacts=[
+            [
+                'nom'=>"Guicheteau",
+                'prenom'=>"Romain",
+                'mail'=>"romain.guicheteau@gmail.com",
+                'sujet'=>"ssss",
+                'message'=>"test test",
+                'newsletter'=>true
+            ],
+            [
+                'nom'=>"Salamone",
+                'prenom'=>"charlène",
+                'mail'=>"charlene.salamone@gmail.com",
+                'sujet'=>"ssss",
+                'message'=>"chachou chachou",
+                'newsletter'=>false
+            ]
+            ];
         foreach ($datas as $value) {
             $article = new Article();
             $article->setNom($value['nom']);
             $article->setSlug($value['slug']);
             $article->setContenu($value['contenue']);
+            $manager->persist($article);
+        }
+
+        foreach ($Contacts as $value) {
+            $contact= new Contact();
+            $contact->setNom($value['nom']);
+            $contact->setPrenom($value['prenom']);
+            $contact->setMail($value['mail']);
+            $contact->setSujet($value['sujet']);
+            $contact->setMessage($value['message']);
+            $contact->setNewsletter($value['newsletter']);
             $manager->persist($article);
         }
         

@@ -20,6 +20,7 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
+    .addEntry('app', './assets/app.js')
     // .addEntry('app', './assets/app.js')
     .addStyleEntry('contact', './assets/styles/contact.scss')
 
@@ -58,6 +59,8 @@ Encore
 
     // enables Sass/SCSS support
     .enableSassLoader()
+
+    .addStyleEntry('contact', "./assets/styles/contact.scss")
 
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()

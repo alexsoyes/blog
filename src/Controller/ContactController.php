@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use App\Repository\ContactRepository;
@@ -13,6 +15,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class ContactController extends AbstractController
 {
     /**
+     * @Route("/contact", name="contact")
+     */
+    public function index(): Response
+    {
+        return $this->render('contact/index.html.twig', [
+            'controller_name' => 'ContactController',
+            'test'=> (array_key_exists('name',$_GET)? $_GET['name']:'')
      * @var ContactRepository
      */
     private $contactRepository;

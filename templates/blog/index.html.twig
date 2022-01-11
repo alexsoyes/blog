@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello BlogController!{% endblock %}
+{% block title %}Bienvenue sur mon blog{% endblock %}
 
 {% block body %}
 <style>
@@ -9,12 +10,15 @@
 </style>
 
 <div class="example-wrapper blog">
+<div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
 
     This friendly message is coming from:
     <ul>
         <li>Your controller at <code><a href="{{ 'D:/symfony-app/TP/blog/src/Controller/BlogController.php'|file_link(0) }}">src/Controller/BlogController.php</a></code></li>
         <li>Your template at <code><a href="{{ 'D:/symfony-app/TP/blog/templates/blog/index.html.twig'|file_link(0) }}">templates/blog/index.html.twig</a></code></li>
+        <li>Your controller at <code><a href="{{ '/home/alex/Projets/blog/src/Controller/BlogController.php'|file_link(0) }}">src/Controller/BlogController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/home/alex/Projets/blog/templates/blog/index.html.twig'|file_link(0) }}">templates/blog/index.html.twig</a></code></li>
     </ul>
 </div>
 {% endblock %}

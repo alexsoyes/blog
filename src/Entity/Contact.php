@@ -17,7 +17,6 @@ class Contact
      */
     private $id;
 
-
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -27,6 +26,10 @@ class Contact
      * @ORM\Column(type="string", length=255)
      */
     private $Nom;
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -47,6 +50,17 @@ class Contact
      * @ORM\Column(type="boolean")
      */
     private $Newsletter;
+    private $firstname;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $newsletter = false;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $age;
 
     public function getId(): ?int
     {
@@ -73,6 +87,14 @@ class Contact
     public function setNom(string $Nom): self
     {
         $this->Nom = $Nom;
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
 
         return $this;
     }
@@ -85,6 +107,14 @@ class Contact
     public function setPrenom(string $Prenom): self
     {
         $this->Prenom = $Prenom;
+    public function getFirstname(): ?string
+    {
+        return $this->firstname;
+    }
+
+    public function setFirstname(string $firstname): self
+    {
+        $this->firstname = $firstname;
 
         return $this;
     }
@@ -109,9 +139,18 @@ class Contact
     public function setMessage(?string $message): self
     {
         $this->message = $message;
+    public function getNewsletter(): ?bool
+    {
+        return $this->newsletter;
+    }
+
+    public function setNewsletter(bool $newsletter): self
+    {
+        $this->newsletter = $newsletter;
 
         return $this;
     }
+
 
     public function getNewsletter(): ?bool
     {
@@ -121,6 +160,15 @@ class Contact
     public function setNewsletter(bool $Newsletter): self
     {
         $this->Newsletter = $Newsletter;
+
+    public function getAge(): ?int
+    {
+        return $this->age;
+    }
+
+    public function setAge(int $age): self
+    {
+        $this->age = $age;
 
         return $this;
     }
